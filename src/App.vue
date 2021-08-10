@@ -1,46 +1,21 @@
 <template>
   <div id="app">
-   <Dashboard :key="reloadBoard" />
+    <Navbar />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Dashboard from './components/Dashboard.vue'
-// import Pannel from './components/Pannel.vue'
-
-
-
+import Navbar from './components/Navbar.vue'
 export default {
-  name: 'App',
+
   components: {
-    Dashboard,
-  },
-  data(){
-    return {
-      reloadBoard: 0
-    }
-  },
-  mounted(){
-    this.forceRerender()
-  },
-  methods: {
-    forceRerender() {
-      this.reloadBoard += 1;  
-    }
+    Navbar
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  /* color: #2c3e50; */
-  height: 100%;
-
-}
-
+<style lang='sass'>
 
 </style>
+
